@@ -1,0 +1,199 @@
+*{
+    align-items: center;
+}
+
+
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #1f1f1f;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: top 0.3s;
+    z-index: 1000;
+}
+
+.header-gif {
+    position: relative;
+}
+
+.header-gif img {
+    width: 50px;
+    height: auto;
+    border-radius: 4%;
+    cursor: pointer;
+}
+
+#bubble {
+    position: absolute;
+    top: 60px; /* Adjusted to place the bubble below the GIF */
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    background-color: #1f1f1f;
+    color: #ffffff;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-family: 'Courier New', Courier, monospace;
+    display: none;
+    white-space: nowrap;
+    border: 2px solid #ffffff;
+    transition: transform 0.3s;
+}
+
+.header-gif:hover #bubble {
+    display: block;
+    transform: translateX(-50%) scale(1);
+}
+
+#quote-container {
+    text-align: center;
+    flex-grow: 1;
+}
+
+#quote {
+    font-size: 16px;
+    font-style: italic;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid #ffffff;
+    width: fit-content;
+    margin: 0 auto;
+    animation: blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #ffffff; }
+}
+
+main {
+    padding-top: 80px;
+    text-align: center;
+}
+
+#intro h2 {
+    font-size: 22px;
+}
+
+.center-gif img {
+    width: 80%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 6%;
+    margin-top: 20px;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    #quote {
+        font-size: 14px;
+    }
+
+    .header-gif img {
+        width: 40px;
+    }
+
+    #bubble {
+        top: 50px;
+        font-size: 11px;
+        padding: 6px;
+    }
+
+    #intro h2 {
+        font-size: 20px;
+    }
+
+    .center-gif img {
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    #quote {
+        font-size: 12px;
+    }
+
+    .header-gif img {
+        width: 35px;
+    }
+
+    #bubble {
+        top: 45px;
+        font-size: 10px;
+        padding: 5px;
+    }
+
+    #intro h2 {
+        font-size: 18px;
+    }
+
+    .center-gif img {
+        max-width: 250px;
+    }
+}
+
+/* Existing styles remain unchanged */
+
+.login-form {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.login-form input {
+    width: 80%;
+    max-width: 300px;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #1f1f1f;
+    color: #ffffff;
+    outline: none;
+}
+
+.login-form input::placeholder {
+    color: #888888;
+}
+
+#enter-button {
+    width: 80%;
+    max-width: 300px;
+    padding: 10px;
+    background-color: #28a745; /* Green color for the button */
+    color: #ffffff;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#enter-button:hover {
+    background-color: #218838;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .login-form input, #enter-button {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-form input, #enter-button {
+        font-size: 12px;
+    }
+}
